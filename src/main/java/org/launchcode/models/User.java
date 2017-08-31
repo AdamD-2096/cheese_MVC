@@ -1,5 +1,7 @@
 package org.launchcode.models;
 
+import org.launchcode.helpers.MDY;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -18,7 +20,8 @@ public class User {
     @Size(min=8, message = "Password must be at least 8 characters long")
     private String password;
     private int id;
-    private static int nextId = 1000000;
+    private static int nextId = 1000;
+    private String date;
     /*
     *   Constructors
     */
@@ -29,6 +32,7 @@ public class User {
         this.password = password;
     }
     public User(){
+        this.date = MDY.getMMDDYY();
         this.id = nextId;
         nextId++;
     }
@@ -46,6 +50,10 @@ public class User {
 
     public int getId() { return id; }
     private void setId(int id) { this.id = id; }
+
+    public String getDate() { return date; }
+    private void setDate(String date) { this.date = date; }
+
     /*
     *   Instance Methods
     */

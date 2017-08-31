@@ -32,4 +32,11 @@ public class UserController {
         model.addAttribute("users", UserData.getAll());
         return "user/index";
     }
+
+    @RequestMapping(value="{userId}", method = RequestMethod.GET)
+    public String displayHome(Model model, @PathVariable int userId){
+        User toDisplay = UserData.getById(userId);
+        model.addAttribute("user", toDisplay);
+        return"user/user";
+    }
 }

@@ -10,7 +10,7 @@
 <h2 th:if="${user}" th:text="'Hello there, ' + ${user.getUsername()}"></h2>
 
 <ul th:if="${users} and ${users.size()}">
-    <li th:each="user : ${users}" th:text="${user.getUsername()}"></li>
+    <li th:each="user : ${users}"><a th:href="@{'/enthusiast/' + ${user.id}}" th:text="${user.getUsername()}"></a></li>
 </ul>
 
 </body>
