@@ -40,7 +40,9 @@ public class CheeseController {
     public String processAddCheeseForm(@ModelAttribute @Valid Cheese newCheese,
                                        Errors errors, Model model) {
         if (errors.hasErrors()){
+            model.addAttribute("types", CheeseType.values());
             model.addAttribute("title", "Add Cheese");
+            model.addAttribute(newCheese);
             return "cheese/add";
         }
         CheeseData.add(newCheese);
