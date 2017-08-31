@@ -10,7 +10,19 @@ public class User {
     private String password;
     private int id;
     private static int nextId = 1000000;
-
+    /*
+    *   Constructors
+    */
+    public User(String username, String email, String password) {
+        this();
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+    public User(){
+        this.id = nextId;
+        nextId++;
+    }
     /*
     *   Getters and Setters
     */
