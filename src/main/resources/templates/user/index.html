@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+<head th:replace="fragments :: head"></head>
+
+<body class="container body-content">
+
+<nav th:replace="fragments :: nav"></nav>
+
+<h2>Hello there,</h2>
+<h1 th:text="${user.getUsername()}">YOU</h1>
+
+</body>
+</html>
