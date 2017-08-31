@@ -7,8 +7,11 @@
 
 <nav th:replace="fragments :: nav"></nav>
 
-<h2>Hello there,</h2>
-<h1 th:text="${user.getUsername()}">YOU</h1>
+<h2 th:if="${user}" th:text="'Hello there, ' + ${user.getUsername()}"></h2>
+
+<ul th:if="${users} and ${users.size()}">
+    <li th:each="user : ${users}" th:text="${user.getUsername()}"></li>
+</ul>
 
 </body>
 </html>

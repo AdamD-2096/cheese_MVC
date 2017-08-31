@@ -1,6 +1,7 @@
 package org.launchcode.controllers;
 
 import org.launchcode.models.User;
+import org.launchcode.models.UserData;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -27,6 +28,8 @@ public class UserController {
             if (!newUser.getPassword().equals(verify)){model.addAttribute("noMatch", "passwords must match");}
             return "user/add";
         }
+        UserData.add(newUser);
+        model.addAttribute("users", UserData.getAll());
         return "user/index";
     }
 }
