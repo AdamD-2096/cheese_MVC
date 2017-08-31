@@ -46,9 +46,6 @@ public class User {
 
     public int getId() { return id; }
     private void setId(int id) { this.id = id; }
-
-    public static int getNextId() { return nextId; }
-    private static void setNextId(int nextId) { User.nextId = nextId; }
     /*
     *   Instance Methods
     */
