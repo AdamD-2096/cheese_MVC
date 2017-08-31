@@ -1,12 +1,21 @@
 package org.launchcode.models;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class User {
 
     /*
     *   Fields
     */
+    @NotNull
+    @Size(min=3, max=20, message = "please keep your username between 3 and 20 characters")
     private String username;
+    @NotNull
+    @Size(min=8, message = "please enter a valid email")
     private String email;
+    @NotNull
+    @Size(min=8, message = "Password must be at least 8 characters long")
     private String password;
     private int id;
     private static int nextId = 1000000;
