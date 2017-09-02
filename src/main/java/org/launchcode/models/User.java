@@ -11,7 +11,7 @@ public class User {
     *   Fields
     */
     @NotNull
-    @Size(min=3, max=20, message = "please keep your username between 3 and 20 characters")
+    @Size(min=5, max=20, message = "please keep your username between 5 and 20 characters")
     private String username;
     @NotNull
     @Size(min=8, message = "please enter a valid email")
